@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Atwix_WeHave404>
+            <version>0.1.0</version>
+        </Atwix_WeHave404>
+    </modules>
+    <global>
+        <helpers>
+            <atwix_wehave404>
+                <class>Atwix_WeHave404_Helper</class>
+            </atwix_wehave404>
+        </helpers>
+        <template>
+            <email>
+                <atwix_wehave404_notification>
+                    <label>Notification about the 404 page</label>
+                    <file>atwix_wehave404_notification.html</file>
+                    <type>html</type>
+                </atwix_wehave404_notification>
+            </email>
+        </template>
+    </global>
+    <frontend>
+        <routers>
+            <cms>
+                <args>
+                    <modules>
+                        <atwix_wehave404 before="Mage_Cms">Atwix_WeHave404_Cms</atwix_wehave404>
+                    </modules>
+                </args>
+            </cms>
+        </routers>
+    </frontend>
+    <default>
+        <atwix_wehave404>
+            <general>
+                <is_enabled>1</is_enabled>
+                <recipient_email>support@example.com</recipient_email>
+                <recipient_name>Support Team</recipient_name>
+            </general>
+        </atwix_wehave404>
+    </default>
+</config>

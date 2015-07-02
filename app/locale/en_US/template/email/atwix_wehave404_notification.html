@@ -1,0 +1,20 @@
+<!--@subject Notification about the 404 page @-->
+<!--@vars
+{
+    "var requested_url":"URL of the 404 page"
+}
+@-->
+
+{{template config_path="design/email/header"}}
+{{inlinecss file="email-inline.css"}}
+
+<table cellpadding="0" cellspacing="0" border="0">
+    <tr>
+        <td class="action-content">
+            <h3>The following page has returned 404 status code</h3>
+            <p>URL : {{var requested_url}}</p>
+        </td>
+    </tr>
+</table>
+
+{{template config_path="design/email/footer"}}

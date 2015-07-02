@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Atwix_WeHave404>
+            <active>true</active>
+            <codePool>community</codePool>
+        </Atwix_WeHave404>
+    </modules>
+</config>
