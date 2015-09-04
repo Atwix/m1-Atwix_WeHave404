@@ -14,23 +14,7 @@ class Atwix_WeHave404_Cms_IndexController extends Mage_Cms_IndexController
     {
         /** @var Atwix_WeHave404_Helper_Data $atwixNotFoundHelper */
         $atwixNotFoundHelper = Mage::helper('atwix_wehave404');
-
-        $isNotificationEnabled = $atwixNotFoundHelper->isEnabled();
-        if ($isNotificationEnabled) {
-            $requestedUrl = Mage::helper('core/url')->getCurrentUrl();
-            $emailTemplateVariables = array('requested_url' => $requestedUrl);
-            $storeId = Mage::app()->getStore()->getId();
-
-            $emailTemplateId = $atwixNotFoundHelper->getEmailTemplateId();
-            $recipientEmail = $atwixNotFoundHelper->getRecepientEmail();
-            $recipientName = $atwixNotFoundHelper->getRecipientName();
-            $sender = $atwixNotFoundHelper->getSender();
-
-            /** @var Mage_Core_Model_Email_Template $emailTemplate */
-            $emailTemplate = Mage::getModel('core/email_template');
-
-            $emailTemplate->sendTransactional($emailTemplateId, $sender, $recipientEmail, $recipientName, $emailTemplateVariables, $storeId);
-        }
+        $atwixNotFoundHelper->notifyAbout404();
 
         $this->getResponse()->setHeader('HTTP/1.1','404 Not Found');
         $this->getResponse()->setHeader('Status','404 File not found');

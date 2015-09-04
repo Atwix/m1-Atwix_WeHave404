@@ -2,7 +2,7 @@
 <config>
     <modules>
         <Atwix_WeHave404>
-            <version>0.1.0</version>
+            <version>0.2.0</version>
         </Atwix_WeHave404>
     </modules>
     <global>
@@ -11,6 +11,11 @@
                 <class>Atwix_WeHave404_Helper</class>
             </atwix_wehave404>
         </helpers>
+        <models>
+            <atwix_wehave404>
+                <class>Atwix_WeHave404_Model</class>
+            </atwix_wehave404>
+        </models>
         <template>
             <email>
                 <atwix_wehave404_notification>
@@ -36,6 +41,8 @@
         <atwix_wehave404>
             <general>
                 <is_enabled>1</is_enabled>
+                <notification_type>0</notification_type>
+                <logfile_name>atwix_wehave404.log</logfile_name>
                 <recipient_email>support@example.com</recipient_email>
                 <recipient_name>Support Team</recipient_name>
             </general>
